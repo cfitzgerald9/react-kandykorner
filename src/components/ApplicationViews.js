@@ -5,35 +5,28 @@ import CandyList from './candies/CandyList'
 import StoreList from './locations/StoreList'
 
 class ApplicationViews extends Component {
-storeArray =[
-    { id: 1, name: "Kandy Korner North", address: "500 Candy Land" },
-    { id: 2, name: "Kandy Korner South", address: "10101 Sweet Tooth Court" }
-]
-employeeArray = [
-    { id: 1, name: "Jessica Younker" },
-    { id: 2, name: "Jordan Nelson" },
-    { id: 3, name: "Zoe LeBlanc" },
-    { id: 4, name: "Blaise Roberts" }
-]
-candyTypes = [
-    {id:1, name: "sucker"},
-    {id:2, name: "gummi"},
-    {id:3, name: "sour"},
-    {id:4, name: "chocolate"}
-]
-candyArray = [
-    {id:1, name: "Reese's Cups", candyTypeId:4 },
-    {id:2, name: "Dum-Dums", candyTypeId:1 },
-    {id:3, name: "Gummi Bears", candyTypeId:2 },
-    {id:4, name: "Warheads", candyTypeId:3 },
-    {id:5, name: "Snickers", candyTypeId:4}
-]
-
 state = {
-    stores: this.storeArray,
-    employees: this.employeeArray,
-    types: this.candyTypes,
-    candies: this.candyArray
+    stores: [],
+    employees: [],
+    types: [],
+    candies: []
+}
+
+componentDidMount() {
+    const newState = {};
+    fetch("http://localhost:5002/candies")
+    .then(r => r.json())
+    .then(candies => newState.candies = candies)
+    .then(() => fetch("http://localhost:5002/employees")
+    .then(r => r.json()))
+    .then(employees => newState.employees = employees)
+    .then(() => fetch("http://localhost:5002/stores")
+    .then(r => r.json()))
+    .then(stores => newState.stores = stores)
+    .then(() => fetch("http://localhost:5002/types")
+    .then(r => r.json()))
+    .then(types => newState.types = types)
+    .then(() => this.setState(newState))
 }
 render() {
     return (
