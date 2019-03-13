@@ -1,25 +1,56 @@
 {
-    "stores" :[
-        { "id": 1, "name": "Kandy Korner North", "address": "500 Candy Land" },
-        { "id": 2, "name": "Kandy Korner South", "address": "10101 Sweet Tooth Court" }
-    ],
-    "employees" : [
-        { "id": 1, "name": "Jessica Younker" },
-        { "id": 2, "name": "Jordan Nelson" },
-        { "id": 3, "name": "Zoe LeBlanc" },
-        { "id": 4, "name": "Blaise Roberts" }
-    ],
-    "types" : [
-        {"id":1, "name": "sucker"},
-        {"id":2, "name": "gummi"},
-        {"id":3, "name": "sour"},
-        {"id":4, "name": "chocolate"}
-    ],
-    "candies" : [
-        {"id":1, "name": "Reese's Cups", "candyTypeId":4 },
-        {"id":2, "name": "Dum-Dums", "candyTypeId":1 },
-        {"id":3, "name": "Gummi Bears", "candyTypeId":2 },
-        {"id":4, "name": "Warheads", "candyTypeId":3 },
-        {"id":5, "name": "Snickers", "candyTypeId":4}
-    ]
+  "stores": [
+    {
+      "id": 1,
+      "name": "Kandy Korner North",
+      "address": "500 Candy Land"
+    },
+    {
+      "id": 2,
+      "name": "Kandy Korner South",
+      "address": "10101 Sweet Tooth Court"
+    }
+  ],
+  "employees": [
+    {
+      "name": "Suge Knight",
+      "title": "Candy taster",
+      "id": 1
+    },
+    {
+      "name": "Dave Davidson",
+      "title": "Cashier",
+      "id": 2
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "name": "sucker"
+    },
+    {
+      "id": 2,
+      "name": "gummi"
+    },
+    {
+      "id": 3,
+      "name": "sour"
+    },
+    {
+      "id": 4,
+      "name": "chocolate"
+    }
+  ],
+  "candies": [
+    {
+      "name": "Snickers",
+      "TypeId": 4,
+      "id": 1
+    },
+    {
+      "name": "Gummi word to your mother",
+      "TypeId": 2,
+      "id": 2
+    }
+  ]
 }
